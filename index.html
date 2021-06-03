@@ -1,0 +1,1011 @@
+<html>
+<head> 
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+	.image-container{
+		 width: 646px; 
+		 margin-left: calc( 50% - 323px); 
+		 background-color: white;
+		 border: 4px solid whitesmoke;
+		 border-radius: 20px;
+		 
+		 height: 320px;
+	}
+
+	.image-graph{
+		 background-image: url(graph.png);
+		 background-size: 100%;
+		 background-repeat: no-repeat;
+		 background-position: 50% top;
+		 width: 100%;
+		 height: 100%;
+	}
+
+	.text{ width: 646px; margin-left: calc( 50% - 323px); color: rgb(41, 41, 41); font-size: 21px; font-weight: 400; font-family: charter, Georgia, Cambria, 'Times New Roman', Times, serif; letter-spacing: -0.063px;line-height: 32px; text-align: justify; }
+	.red-circle{
+
+			width: 40px; height: 40px; border: 3px solid red; border-radius: 100%; position: absolute; 
+	}
+	.tag-container{
+		width: 100%; height: auto;
+		width: 646px; margin-left: calc( 50% - 323px); margin-bottom: 0px;
+	}
+	.tag{
+		display: inline-block;
+		width: auto; 
+		height: auto; 
+		background-color: rgba(0,0,0,0.1);
+		padding-left:20px;
+		padding-right:20px;
+		padding-top:5px;
+		padding-bottom:5px;
+		border-radius:20px;
+		font-weight: bold;
+		color: rgba(0,0,0,0.7);
+		font-family: Archivo Narrow;
+		text-decoration: none;
+		border: 3px solid whitesmoke;
+		margin-bottom: 5px;
+		display: inline-block;
+	}
+	.tag a{ color: rgba(0,0,0,0.7); text-decoration: none; }
+	.tag a:hover{ color: rgb(0, 173, 255); }
+	.tag a:active{ color: #ffc107 }
+
+	.me-bg{
+		position: absolute;
+		top:105px;
+		left: 105px;
+		width: 200px;
+		height: 100px;
+	}
+
+	.me-mist{
+		position: absolute;
+		left:0;
+		top:0;
+		width: 100%;
+		height: 100%;
+		background-color: whitesmoke;
+		border-radius: 20px;
+		opacity:0.8;
+	}
+	.me-bg-2{
+		position: absolute;
+		left:10px;
+		top:10px;
+		width: calc(100% - 20px);
+		height: calc(100% - 20px);
+		background-color: white;
+		border-radius: 20px;
+	}
+	.me-left{
+		position: absolute;
+		left:0;
+		top:0;
+		width: 60px;
+		height: 100%;
+	}
+	.me-right{
+		position: absolute;
+		left:60px;
+		top:0;
+		padding: 15px;
+		width: calc(100% - 90px);
+		height: calc(100% - 30px);
+		color:rgba(0,0,0,0.7);
+		font-family: Patrick Hand;
+		letter-spacing: 2px;
+	}
+	.me-avatar{
+		position: absolute;
+		left:5px;
+		top:calc( 50% - 30px );
+		padding: 15px;
+		width: 24px;
+		height: 24px;
+		border-radius: 100%;
+		border: 3px solid whitesmoke;
+		background-image: url(avatar.jpg);
+		background-size: 140%;
+		background-position: 20% 10%;
+	}
+
+	.code-container{
+		width: 646px; 
+		height:auto;
+		margin-left: calc( 50% - 323px); 
+		margin-bottom: 20px;
+	}
+
+	.code-block{
+		background-color: rgba(0,0,0,.8);
+		border-radius: 10px;
+		border: 5px solid whitesmoke;
+		width:  auto;
+		height: 200px;
+		color: white;
+		font-family: Roboto Mono;
+		font-size: 14px;
+		padding: 20px;
+		overflow-x: scroll;
+		white-space: nowrap;
+	}
+	.code{
+		display:inline-block;
+		margin:0;
+		padding:0;
+		float:left;
+	}
+	.prop{
+		display:inline-block;
+		margin:0;
+		padding:0;
+		float:left;
+		color:rgb(255, 215, 0);
+	}
+	.blue{
+		display:inline-block;
+		color: rgb(0, 173, 255);
+		margin:0;
+		padding:0;
+		float:left;
+	}
+	.bad{
+		display:inline-block;
+		color: red;
+		margin:0;
+		padding:0;
+		float:left;
+	}
+	.good{
+		display:inline-block;
+		color: lime;
+		margin:0;
+		padding:0;
+		float:left;
+	}
+	.white{
+		display:inline-block;
+		color: white;
+		margin:0;
+		padding:0;
+		float:left;
+	}
+	.variable{
+		display:inline-block;
+		color: rgb(0, 173, 255);
+		margin:0;
+		padding:0;
+		float:left;
+	}
+
+	.line{
+		float:clear;
+		display:block;
+		margin:0;
+		padding:0;
+		margin-left:50px;
+		white-space: nowrap;
+	}
+
+
+</style>
+</head> 
+<body style="margin: 0; padding: 0; overflow-x:hidden; height: auto; background-color: white;">
+	
+	<div style="width: 100%; background-color: white; padding-top:60px; overflow-y:hidden; height: auto;">	
+		
+		<div style="height: 54px;background-color: rgb(0, 173, 255);width:100%;"></div>
+
+		<div style="width: 646px; margin-left: calc( 50% - 323px);">
+			<h1 style="font-family:Bebas Neue; margin:0; margin-top:40px; text-align: center; font-weight: 900; letter-spacing: 1.528px; font-size: 128px;">
+			INTRODUCTION
+			</h1>
+		</div>
+
+		<div class="text">
+			<p>
+				  First impressions are everything. This is true in almost every aspect of life, however this is perhaps no more true than in the tech industry where companies live and die by aesthetics. In the eyes of the end-user, a buggy UI or an error prone app conveys a deadly degree of unprofessionalism. There is nothing more likely to kill a business relationship and send customers on their merry way for all eternity than a user experience fraught with frustration.
+			</p>
+
+			<p>
+				 A frustrating user experience can occur in many ways. One of the more common ways is via Responsive Design, or how your UI transitions between various screen sizes. Big screen monitors, laptops, tablets and smart phones, etc, all require different viewing configurations. Designing a website to accommodate an array of devices can get very complicated, very quickly. However complicated from an engineering perspective, your UI must be the furthest thing from complicated to the user -- unless the mission is to receive from competitors as many thank you cards as possible. In all seriousness, there is nothing that says to the customer that I care about you and your business more than a well-polished product that works like magic. Inspire needs to do just that: inspire!
+			</p>
+
+		</div>
+
+
+		<!------------------------------------------------------------------------------------->
+
+		
+
+
+		<div style="height: 54px;background-color: rgb(0, 173, 255);width:100%; margin-top: 50px;"></div>
+
+
+		<div style="width: 646px; margin-left: calc( 50% - 323px);">
+			<div style="left: calc(50% - 250px); margin-top: 40px; width: 60px; height: 60px; position: absolute; background-image: url(bug.svg); background-size: 100%;"></div>
+			<div style="left: calc(50% + 180px); margin-top: 40px; width: 60px; height: 60px; position: absolute; background-image: url(bug.svg); background-size: 100%;"></div>
+			<h1 style="font-family:Bebas Neue; margin:0; margin-top:40px; text-align: center; font-weight: 900; letter-spacing: 1.528px; font-size: 128px;">
+			Bug 001
+			</h1>
+
+			<h2 style="font-family:Bebas Neue; margin:0; margin-top:-30px; margin-bottom:30px; color:rgba(0,0,0,0.2); text-align: center; font-weight: 400; letter-spacing: 0.528px; font-size: 58px;">
+			Navigation Toggle
+			</h2>
+		</div>
+
+
+		<div class="text">
+			<p>
+				  Looking over Inspire’s Dashboard interface, its apparent that considerable thought has been put into the overall idea and business model. And while the high level conceptualization is out of this world cool, the implementation is less than stellar in many places, and even sloppy in others. In less than five minutes of looking I found several pain points.
+			</p>
+		</div>
+
+
+		<div style="width: 646px; margin-left: calc( 50% - 323px);">
+			<h1 style="font-family:Bebas Neue; margin:0; margin-top:40px; text-align: center; font-weight: 900; letter-spacing: 1.528px; font-size: 68px;">
+			Problem
+			</h1>
+
+			<h2 style="font-family:Bebas Neue; margin:0; margin-top:-10px; margin-bottom:30px; color:rgba(0,0,0,0.2); text-align: center; font-weight: 400; letter-spacing: 7.528px; font-size: 38px;">
+			Navigation Menu
+			</h2>
+		</div>
+
+			<div class="text">
+				<p>
+				  One of the things I noticed first about Inspire’s website was the Dashboard navigational menu, located on the left-hand side of the layout. Initially, the overall design looked quite good.
+				</p>
+
+				<p>
+				  On closer inspection a few serious functionality problems stood out. For starters, having a laptop with a smaller screen resolution, I noticed that the behavior of the menu’s toggle button was affected by the browser’s window height. By adjusting the vertical window size larger or smaller, the button would actually traverse up and down the y-axis, at times covering other buttons and making them inaccessible. This effect can be seen below. 
+				</p>
+			</div>
+
+		<div style="position: relative; display: block; background-color:transparent; height: auto; width: 646px; margin-bottom: 50px; margin-left: calc( 50% - 323px);">
+			<div class="red-circle" style="top:312px; left: 37px;"></div>
+			<div style="border: 5px solid whitesmoke; background-color: rgba(0,0,0,0.1); height: auto; width: 620px; padding-left:20px; padding-top:20px; border-radius: 10px;">
+				<iframe src="index-3.html" seamless width="599" height="350px" frameBorder="0"></iframe>
+			</div>
+
+			<div class="me-bg" style="width: 430px; height: 175px; top: 185px;">
+				<div class="me-mist"></div>
+				<div class="me-bg-2">
+					<div class="me-left">
+						<div class="me-avatar"></div>
+					</div>
+					<div class="me-right">
+						Here we can see that if a user reduces the browser window height, the UI functionality becomes partly unusable. This makes it 
+						impossible to say, look at two stocks at one time, or cross-reference secondary information. 
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+
+		<div style="width: 646px; margin-left: calc( 50% - 323px);">
+			<h1 style="font-family:Bebas Neue; margin:0; margin-top:40px; text-align: center; font-weight: 900; letter-spacing: 1.528px; font-size: 68px;">
+			Expectation
+			</h1>
+
+			<h2 style="font-family:Bebas Neue; margin:0; margin-top:-10px; margin-bottom:30px; color:rgba(0,0,0,0.2); text-align: center; font-weight: 400; letter-spacing: 7.528px; font-size: 38px;">
+			Two Problems
+			</h2>
+		</div>
+		
+
+		<div class="text">
+			<p>
+				  As we can see above, the Dashboard UI fails one of the most basic principles of Responsive Design: resizability. While technically more of a design flaw then a full fledged bug, this issue boils down to two elementary errors. The first error was the failure of the developer to anticipate the potential problem of positioning stationary buttons above non-stationary buttons capable of traversing the y-axis per window height. The second error was allowing the menu to scroll in the first place, which makes very little sense with only six icons. The expectation, should be to have the icons positioned as follows. 
+			</p>
+		</div>
+		
+
+		
+
+		<!------------------------------------------------------------------------------------->
+		<!------------------------------------------------------------------------------------->
+
+
+
+
+		<div style="position: relative; display: block; background-color:transparent; height: auto; width: 646px; margin-bottom: 50px; margin-left: calc( 50% - 323px);">
+			<div class="red-circle" style="top:420px; left: 37px;"></div>
+			<div style="border: 5px solid whitesmoke; background-color: rgba(0,0,0,0.1); height: auto; width: 620px; padding-left:20px; padding-top:20px; border-radius: 10px;">
+				<iframe src="index-2.html" seamless width="599" height="460px" frameBorder="0"></iframe>
+			</div>
+
+
+
+			<div class="me-bg" style="width: 420px; height: 120px; top: 350px;">
+				<div class="me-mist"></div>
+				<div class="me-bg-2">
+					<div class="me-left">
+						<div class="me-avatar"></div>
+					</div>
+					<div class="me-right">
+						Notice when the browser is at full window height, the menu bug is hidden. Now lets look at the next screen.
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+
+
+
+		<div style="width: 646px; margin-left: calc( 50% - 323px);">
+			<h1 style="font-family:Bebas Neue; margin:0; margin-top:40px; text-align: center; font-weight: 900; letter-spacing: 1.528px; font-size: 68px;">
+			Solution
+			</h1>
+
+			<h2 style="font-family:Bebas Neue; margin:0; margin-top:-10px; margin-bottom:30px; color:rgba(0,0,0,0.2); text-align: center; font-weight: 400; letter-spacing: 7.528px; font-size: 38px;">
+			Modify CSS
+			</h2>
+		</div>
+
+		<div class="text">
+			<p>
+				 The solution, as suggested above, is twofold. First we dig into the code and find the reason why the button is moving around, and second we disable the menu scroll.
+			</p>
+
+			<p>
+			With a little reverse engineering, we can locate the offending code block, which can be seen below.
+			</p>
+
+			
+
+
+		</div>
+
+
+		<div class="code-container">
+			<div class="code-block" style="height: 100px; overflow-x: scroll;">
+				<div class="code">
+						<div class="white">&lt;</div>
+						<div class="prop">div</div>
+						<div class="blue">&nbsp;_ngcontent-veh-c4</div>
+						<div class="white">=""</div>
+						<div class="prop">&nbsp;class</div>
+						<div class="white">="</div>
+						<div class="variable">side-navigation__collapse-toggle</div>
+						<div class="white">"&gt;</div>
+				</div>
+				<div class="code" style="margin-left:30px; white-space: nowrap;">
+						<div class="white">&lt;</div>
+						<div class="prop">div</div>
+						<div class="blue">&nbsp;_ngcontent-veh-c4</div>
+						<div class="white">=""</div>
+						<div class="prop">&nbsp;class</div>
+						<div class="white">="</div>
+						<div class="variable">ng-star-inserted</div>
+						<div class="white">"&gt;</div>
+				</div>
+
+				<div class="code" style="margin-left:60px; white-space: nowrap; width: 750px">
+						<div class="white">&lt;</div>
+						<div class="prop">div</div>
+						<div class="blue">&nbsp;_ngcontent-veh-c4</div>
+						<div class="white">=""</div>
+						<div class="prop">&nbsp;class</div>
+						<div class="white">="</div>
+						<div class="variable">side-navigation__open-navigation-button--open</div>
+						<div class="white">"&gt;</div>
+						<div class="white">&lt;/</div>
+						<div class="prop">div</div>
+						<div class="white">&gt;</div>
+				</div>
+
+				<div class="code" style="margin-left:30px; white-space: nowrap;">
+						<div class="white">&lt;/</div>
+						<div class="prop">div</div>
+						<div class="white">&gt;</div>
+				</div>
+				<br>
+				<br>
+				<br>
+				<br>
+				<div class="code" style="margin-left:0px; white-space: nowrap;">
+						<div class="white">&lt;/</div>
+						<div class="prop">div</div>
+						<div class="white">&gt;</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="text">
+			<p>
+				  To keep it simple, we can reuse the code that already exists for the stationary buttons, and modify it to retain the menu toggle functionality of the dysfunctional button. Although it is impossible to fully test these corrections, without full access to the codebase, the fix would be something like this. 
+			</p>
+		</div>
+
+		
+                    
+                      <!--
+                        <div _ngcontent-veh-c4="" class="side-navigation__menu-item" mattooltipposition="right" style="touch-action: none; user-select: none;" tabindex="0" aria-describedby="cdk-describedby-message-1" cdk-describedby-host="">                        
+                          <div _ngcontent-veh-c4="" class="side-navigation__open-navigation-button--open ng-star-inserted"></div>
+                      -->
+                    
+
+
+		<div class="code-container">
+			<div class="code-block" style="height: 140px; overflow-x: scroll; ">
+				<div class="code" style=" width: 750px;">
+						<div class="white">&lt;</div>
+						<div class="prop">div</div>
+						<div class="blue">&nbsp;_ngcontent-veh-c4</div>
+						<div class="white">=""</div>
+						<div class="prop">&nbsp;class</div>
+						<div class="white">="</div>
+						<div class="variable">side-navigation__menu-items ng-star-inserted</div>
+						<div class="white">"&gt;</div>
+				</div>
+				<div class="code" style="margin-left:30px; white-space: nowrap;  width: 750px;">
+						<div class="white">&lt;</div>
+						<div class="prop">div</div>
+						<div class="blue">&nbsp;_ngcontent-veh-c4</div>
+						<div class="white">=""</div>
+						<div class="prop">&nbsp;class</div>
+						<div class="white">="</div>
+						<div class="variable">side-navigation__menu-item-container</div>
+						<div class="white">"&gt;</div>
+				</div>
+
+				<div class="code" style="margin-left:60px; white-space: nowrap;">
+						<div class="white">&lt;</div>
+						<div class="prop">div</div>
+						<div class="blue">&nbsp;_ngcontent-veh-c4</div>
+						<div class="white">=""</div>
+						<div class="prop">&nbsp;class</div>
+						<div class="white">="</div>
+						<div class="variable">side-navigation__menu-item</div>
+						<div class="white">"&gt;</div>
+				</div>
+
+				<div class="code" style="margin-left:90px; white-space: nowrap; width: 880px">
+						<div class="white">&lt;</div>
+						<div class="prop">div</div>
+						<div class="blue">&nbsp;_ngcontent-veh-c4</div>
+						<div class="white">=""</div>
+						<div class="prop">&nbsp;class</div>
+						<div class="white">="</div>
+						<div class="variable">side-navigation__open-navigation-button--open ng-star-inserted</div>
+						<div class="white">"&gt;</div>
+						<div class="white">&lt;/</div>
+						<div class="prop">div</div>
+						<div class="white">&gt;</div>
+				</div>
+				<div class="code" style="margin-left:60px; white-space: nowrap;">
+						<div class="white">&lt;/</div>
+						<div class="prop">div</div>
+						<div class="white">&gt;</div>
+				</div>
+				<br><br><br><br><br>
+				<div class="code" style="margin-left:30px; white-space: nowrap;">
+						<div class="white">&lt;/</div>
+						<div class="prop">div</div>
+						<div class="white">&gt;</div>
+				</div>
+				<br>
+				<div class="code" style="margin-left:0px; white-space: nowrap;">
+						<div class="white">&lt;/</div>
+						<div class="prop">div</div>
+						<div class="white">&gt;</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="text">
+			<p>
+				 Great. So now that we have locked the hyperactive button in place so that its functionality is consistent with the other buttons, there is still one more issue: reconcile the vertical and horizontal alignment. In order to do this we need to jump into the css and find the code that controls this aspect, as seen below.
+			</p>
+		</div>
+
+
+		 
+    
+ 
+
+
+
+		<div class="code-container">
+			<div class="code-block" style="height: 300px">
+				<div="code">
+					<div class="white">.</div>
+					<div class="blue">side-navigation__open-navigation-button--open</div>
+					<div class="white">[</div>
+					<div class="variable">_ngcontent-veh-c4</div>
+					<div class="white">],</div><br>
+					<div class="blue" style="margin-left:8px;">side-navigation__open-navigation-button--closed</div>
+					<div class="white">[</div>
+					<div class="variable">_ngcontent-veh-c4</div>
+					<div class="white">]&lcub;</div><br>
+
+
+					<div class="line"><div class="prop">position</div><div class="white">:absolute;</div></div><br>
+					<div class="line" style="width: 720px;"><div class="prop">background</div><div class="white">:url(content/bbf4fb4e7ba110ca33713da50abe7b4b.svg) no-repeat center top;</div></div><br>
+					<div class="line"><div class="prop">width</div><div class="white">:24px;</div></div><br>
+					<div class="line"><div class="prop">height</div><div class="white">:24px;</div></div><br>
+					<div class="line"><div class="bad">bottom</div><div class="bad">:30px;</div></div><br>
+					<div class="line"><div class="bad">left</div><div class="bad">:24px;</div></div><br>
+					<div class="white">&rcub;</div>
+
+					<br><br>
+					<div class="white">.</div>
+					<div class="blue">side-navigation__open-navigation-button--open</div>
+					<div class="white">[</div>
+					<div class="variable">_ngcontent-veh-c4</div>
+					<div class="white">]</div>
+					<div class="white">&lcub;</div><br>
+
+
+					<div class="line"><div class="prop">transform</div><div class="white">:rotate(180deg);</div></div><br>
+					<div class="line"><div class="bad">bottom</div><div class="bad">:30px;</div></div><br>
+					<div class="line"><div class="prop">width</div><div class="white">:24px;</div></div><br>
+					
+					<div class="white">&rcub;</div>
+				</div>
+			</div>
+		</div>
+
+			<div class="text">
+			<p>
+				  By removing the lines highlighted in red, we can eliminate the forced repositioning by the css. In this case, instead of adding additional code, we simply remove the code already there and let the natural flow of the interface position it automatically. Indeed, sometimes less really is more. By removing the troublesome lines above, we end up with the following. 
+			</p>
+		</div>
+
+		<div class="code-container">
+			<div class="code-block" style="height: 230px">
+				<div="code">
+					<div class="white">.</div>
+					<div class="blue">side-navigation__open-navigation-button--open</div>
+					<div class="white">[</div>
+					<div class="variable">_ngcontent-veh-c4</div>
+					<div class="white">],</div><br>
+					<div class="blue" style="margin-left:8px;">side-navigation__open-navigation-button--closed</div>
+					<div class="white">[</div>
+					<div class="variable">_ngcontent-veh-c4</div>
+					<div class="white">]&lcub;</div><br>
+
+
+					<div class="line"><div class="prop">position</div><div class="white">:absolute;</div></div><br>
+					<div class="line" style="width: 720px;"><div class="prop">background</div><div class="white">:url(content/bbf4fb4e7ba110ca33713da50abe7b4b.svg) no-repeat center top;</div></div><br>
+					<div class="line"><div class="prop">width</div><div class="white">:24px;</div></div><br>
+					<div class="line"><div class="prop">height</div><div class="white">:24px;</div></div><br>
+					<div class="white">&rcub;</div>
+
+					<br><br>
+					<div class="white">.</div>
+					<div class="blue">side-navigation__open-navigation-button--open</div>
+					<div class="white">[</div>
+					<div class="variable">_ngcontent-veh-c4</div>
+					<div class="white">]</div>
+					<div class="white">&lcub;</div><br>
+
+
+					<div class="line"><div class="prop">transform</div><div class="white">:rotate(180deg);</div></div><br>
+					<div class="line"><div class="prop">width</div><div class="white">:24px;</div></div><br>
+					
+					<div class="white">&rcub;</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="text">
+			<p>
+				There we go. Now we are basically done. However, there is one small thing we could do to make it even better. As mentioned above, it was problematic to allow a scroll option on a side menu with only six icons. (Like, really, what the heck were they thinking? While we may never know, the good news is that we know how to fix it.) 
+			</p>
+			<p>
+				For this, lets take another look at the code and fix this behavior for good. 
+			</p>
+		
+		</div>
+
+
+		
+
+		<div class="code-container">
+			<div class="code-block" style="height: 20px; overflow-x: scroll;">
+				<div class="code">
+						<div class="white">&lt;</div>
+						<div class="prop">div</div>
+					
+						<div class="prop">&nbsp;class</div>
+						<div class="white">="</div>
+						<div class="variable">mat-drawer-inner-container</div>
+						<div class="white">"&gt;</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="text">
+			<p>
+				We need to find a single line of code (out of around 3000). While this is kind of a needle-in-the-haystack moment, this approach can be an integral component of the engineers toolkit!
+			</p>
+		
+		</div>
+
+		<div class="code-container">
+			<div class="code-block" style="height: 20px; overflow-x: scroll;">
+				<div class="code" style="width:650px">
+						<div class="white">&lt;</div>
+						<div class="prop">div</div>
+					
+						<div class="prop">&nbsp;class</div>
+						<div class="white">="</div>
+						<div class="variable">mat-drawer-inner-container</div>
+						<div class="white">"</div>
+
+						<div class="prop">&nbsp;style</div>
+						<div class="white">="</div>
+						<div class="variable">overflow-y:hidden</div>
+						<div class="white">"&gt;</div>
+
+
+				</div>
+			</div>
+		</div>
+
+
+	<div class="text">
+		<p>
+			And viola! The offending construct has been identified. By hiding the overflow on the y-axis, we have essentially forced the menu to stay true to itself no matter what changes we throw at it. As is often the case, the fix is simple once the code has been decomposed and isolated.
+		</p>
+		<p>
+		Now lets feast our eyes upon the fruit of our labor. As you can see below, the menu toggle icon no longer has a mind of its own. When the page scrolls, it scrolls with it. It is where we expect it to be, when we expect it to be there. 
+		</p>
+	</div>
+
+	<div style="position: relative; display: block; background-color:transparent; height: auto; width: 646px; margin-bottom: 50px; margin-left: calc( 50% - 323px);">
+		<div style="border: 5px solid whitesmoke; background-color: rgba(0,0,0,0.1); height: 350px; width: 620px; padding-left:20px; padding-top:20px; border-radius: 10px; overflow-y:scroll;">
+			<iframe src="index-4.html" seamless width="599" height="450px" frameBorder="0"></iframe>
+		</div>
+	</div>
+
+
+	<div style="height: 54px;background-color: rgb(0, 173, 255);width:100%;"></div>
+
+		<div style="width: 646px; margin-left: calc( 50% - 323px);">
+			<div style="left: calc(50% - 250px); margin-top: 40px; width: 60px; height: 60px; position: absolute; background-image: url(bug.svg); background-size: 100%;"></div>
+			<div style="left: calc(50% + 180px); margin-top: 40px; width: 60px; height: 60px; position: absolute; background-image: url(bug.svg); background-size: 100%;"></div>
+			<h1 style="font-family:Bebas Neue; margin:0; margin-top:40px; text-align: center; font-weight: 900; letter-spacing: 1.528px; font-size: 128px;">
+			Bug 002
+			</h1>
+
+			<h2 style="font-family:Bebas Neue; margin:0; margin-top:-30px; margin-bottom:30px; color:rgba(0,0,0,0.2); text-align: center; font-weight: 900; letter-spacing: 8px; font-size: 58px;">
+			Text Cut Off
+			</h2>
+		</div>
+
+		<div class="text">
+			<p>
+				  In this next section, we will be looking at another area of the Dashboard that has a few opportunities for improvement. Before we get into the nuts and bolts of the problem, lets take a look at the following.
+			</p>
+		</div>
+
+
+		
+
+		<div style="position: relative; display: block; background-color:transparent; width: 640px; height: 300px; margin-top:0px; margin-left: calc( 50% - 323px); border: 5px solid whitesmoke; overflow-y:hidden; border-radius: 10px;">
+			<div style="background-color: rgba(0,0,0,0.1); width: 826px; height: 790px; transform: scale(0.75) translate(-144px, -138px); padding-left:28px; padding-top:28px;">
+				<iframe src="index-1.html" seamless width="800" height="900" frameBorder="0" ></iframe>
+			</div>
+
+		</div>
+
+
+		<div class="text">
+			<p>
+				  As you can see above, something has clearly gone awry--the last line of the text is completely cut off! While the overall component does have nice aesthetics, since we are being honest here, the text cut off at the bottom does not paint an appearance of professionalism. Before we make any changes though, lets run the gamut of screen sizes and get a full scope of the potential problem.
+			</p>
+		</div>
+
+
+
+		<div style="width: 646px; margin-left: calc( 50% - 323px);">
+			<h1 style="font-family:Bebas Neue; margin:0; margin-top:40px; text-align: center; font-weight: 900; letter-spacing: 1.528px; font-size: 68px;">
+			Screen Size A
+			</h1>
+
+			<h2 style="font-family:Bebas Neue; margin:0; margin-top:-10px; margin-bottom:30px; color:rgba(0,0,0,0.2); text-align: center; font-weight: 400; letter-spacing: 6.528px; font-size: 38px;">
+			Less Than 600px
+			</h2>
+		</div>
+
+
+		<div class="text">
+			<p>
+				Here we can see a that screen size less than 600px appears to have no obvious issues. In other words, if you are surfing the Dashboard on your smartphone or some mid-range sized tablet, you should have no issue whatsoever. 
+			</p>
+		</div>
+
+		<div class="tag-container">
+			<div class="tag">Link: <a href="https://inspireinsight.com/#/dashboard">https://inspireinsight.com/#/dashboard</a></div>
+			<div class="tag">Resolution width: &#60; 600px</div>
+		</div>
+
+		<div style="position: relative; display: block; background-color:transparent; height: 452px; width: 640px; margin-left: calc( 50% - 323px); overflow-y:hidden; border: 5px solid whitesmoke; border-radius: 10px;">
+			<div style="background-color: rgba(0,0,0,0.1); height: 900px; width: 620px; padding-left:20px; padding-top:20px;">
+				<iframe src="index-1.html" seamless width="599" height="900" frameBorder="0" ></iframe>
+			</div>
+
+			<div class="me-bg" style="width: 540px; height: 100px; top: 38px; left: 30px;">
+				<div class="me-mist"></div>
+				<div class="me-bg-2">
+					<div class="me-left">
+						<div class="me-avatar"></div>
+					</div>
+					<div class="me-right">
+						At small screen resolutions, such as phones, the bug remains hidden.
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div style="width: 646px; margin-left: calc( 50% - 323px);">
+			<h1 style="font-family:Bebas Neue; margin:0; margin-top:40px; text-align: center; font-weight: 900; letter-spacing: 1.528px; font-size: 68px;">
+			Screen Size B
+			</h1>
+
+			<h2 style="font-family:Bebas Neue; margin:0; margin-top:-10px; margin-bottom:30px; color:rgba(0,0,0,0.2); text-align: center; font-weight: 400; letter-spacing: 6.528px; font-size: 38px;">
+			Greater than 1023px
+			</h2>
+		</div>
+
+		<div class="text">
+			<p>
+				  Larger screen sizes also appear to pose no issue. Devices such as large desktop monitors, TVs, 15-inch laptops, or overgrown tablets in landscape mode should be able to render the website with ease. 
+			</p>
+		</div>
+
+		<div class="tag-container">
+			<div class="tag">Link: <a href="https://inspireinsight.com/#/dashboard">https://inspireinsight.com/#/dashboard</a></div>
+			<div class="tag">Resolution width: &#62; 1023px</div>
+		</div>
+
+		<div style="position: relative; display: block; background-color:transparent; width: 640px; height: 436px; margin-top:0px; margin-left: calc( 50% - 323px); border: 5px solid whitesmoke;  border-radius: 10px; overflow-y:hidden;">
+			<div style="background-color: rgba(0,0,0,0.1); width: 662px; height: 470px; transform: scale(.94) translate(-22px, -16px); padding-left:20px; padding-top:28px;">
+				<iframe src="index-1.html" seamless width="1024" height="900" frameBorder="0"></iframe>
+			</div>
+
+			<div class="me-bg" style="width: 540px; height: 100px; top: 40px; left: 30px;">
+				<div class="me-mist"></div>
+				<div class="me-bg-2">
+					<div class="me-left">
+						<div class="me-avatar"></div>
+					</div>
+					<div class="me-right">
+						At large screen resolutions, such as most desktop computers or laptops, the bug is also hidden.
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+		<div style="width: 646px; margin-left: calc( 50% - 323px);">
+			<h1 style="font-family:Bebas Neue; margin:0; margin-top:40px; text-align: center; font-weight: 900; letter-spacing: 1.528px; font-size: 68px;">
+			Screen Size C
+			</h1>
+
+			<h2 style="font-family:Bebas Neue; margin:0; margin-top:-10px; margin-bottom:30px; color:rgba(0,0,0,0.2); text-align: center; font-weight: 400; letter-spacing: 2.228px; font-size: 38px;">
+			600px to 1023px
+			</h2>
+		</div>
+
+		<div class="text">
+			<p>
+				  A screen size in the mid-range, defined (by the standard breakpoints used on Inspire) as a screen width that is greater than 600px and less than 1023px, appears to be where the bug rears its ugly head. 
+			</p>
+		</div>
+
+
+		
+		<div class="tag-container">
+			<div class="tag">Link: <a href="https://inspireinsight.com/#/dashboard">https://inspireinsight.com/#/dashboard</a></div>
+			<div class="tag">Resolution width: 600px &#8804; &#119909; &#8804; 1023px</div>
+		</div>
+
+		<div style="position: relative; display: block; background-color:transparent; width: 640px; height: 300px; margin-top:0px; margin-left: calc( 50% - 323px); border: 5px solid whitesmoke; overflow-y:hidden; border-radius: 10px;">
+			<div style="background-color: rgba(0,0,0,0.1); width: 826px; height: 790px; transform: scale(0.75) translate(-144px, -138px); padding-left:28px; padding-top:28px;">
+				<iframe src="index-1.html" seamless width="800" height="900" frameBorder="0" ></iframe>
+			</div>
+
+
+
+			<div class="me-bg" style="width: 540px; height: 90px; top: 27px; left: 30px;">
+				<div class="me-mist"></div>
+				<div class="me-bg-2">
+					<div class="me-left">
+						<div class="me-avatar"></div>
+					</div>
+					<div class="me-right">
+						At mid-range resolutions, such as tablets and small computers, the text on the bottom line is cut short.
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="text">
+			<p>
+		Now that we have isolated the problem, the next step is to fix it. In order to do this however, we must first analyze what is happening on a deeper level. 
+		</p>
+		</div>
+
+		<div style="width: 646px; margin-left: calc( 50% - 323px);">
+			<h1 style="font-family:Bebas Neue; margin:0; margin-top:40px; text-align: center; font-weight: 900; letter-spacing: 1.528px; font-size: 68px;">
+			Solution
+			</h1>
+
+			<h2 style="font-family:Bebas Neue; margin:0; margin-top:-10px; margin-bottom:30px; color:rgba(0,0,0,0.2); text-align: center; font-weight: 400; letter-spacing: 7.528px; font-size: 38px;">
+			Modify CSS
+			</h2>
+		</div>
+
+		<div class="text">
+			<p>
+		Looking under the hood, it is easy to determine that the issue at hand is rooted in the developer’s approach to handling the dynamic resizing of the x-axis when transitioning between different screen sizes. With modern development methodologies, such as test driven development, CICD, Agile processes, etc, it is very rare that such issues would not be identified before being pushed into production level code. This is especially true considering how simple it would be to suss out a value that would work for all three targeted screen ranges. 
+		</p>
+
+	<p>
+		This is a simple fix, to be quite frank. All that is required is plugging in a couple different values into the code highlighted in red below, and seeing which work across all three targeted screen resolutions. 
+		</p>
+		
+		</div>
+
+
+
+		
+
+
+		<div class="code-container">
+			<div class="code-block" style="height: 120px">
+				<div="code">
+					<div class="white">.</div>
+					<div class="blue">news-small__blurb</div>
+					<div class="white">[</div>
+					<div class="variable">_ngcontent-veh-c15</div>
+					<div class="white">]&lcub;</div><br>
+					<div class="line"><div class="prop">padding</div><div class="white">:0.5em 0;</div></div><br>
+					<div class="line"><div class="bad">max-height:49%;</div></div><br>
+					<div class="line"><div class="prop">overflow</div>:hidden;</div>
+					<div class="line"><div class="prop">text-overflow</div>:ellipsis;</div>
+					<div class="white">&rcub;</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="text">
+			<p>
+				 Playing with the values a bit, it was quick and easy to determine that a value of 54% for the max-height property would do the trick. This change is highlighted in green below. 
+			</p>
+		</div>
+
+		<div class="code-container">
+			<div class="code-block" style="height: 120px">
+				<div="code">
+					<div class="white">.</div>
+					<div class="blue">news-small__blurb</div>
+					<div class="white">[</div>
+					<div class="variable">_ngcontent-veh-c15</div>
+					<div class="white">]&lcub;</div><br>
+					<div class="line"><div class="prop">padding</div><div class="white">:0.5em 0;</div></div><br>
+					<div class="line"><div class="good">max-height:54%;</div></div><br>
+					<div class="line"><div class="prop">overflow</div>:hidden;</div>
+					<div class="line"><div class="prop">text-overflow</div>:ellipsis;</div>
+					<div class="white">&rcub;</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="text">
+			<p>
+				 As we can see by comparing the elements below, the first of which does not have the fix applied, and the second of which does, the issue has been completely resolved in the latter. Although not shown here, this fix is fluid across all targeted screen resolutions. 
+			</p>
+		</div>
+
+		<div style="position: relative; display: block; background-color:transparent; width: 640px; height: 590px; margin-top:0px; margin-left: calc( 50% - 323px); border: 5px solid whitesmoke; overflow-y:hidden; border-radius: 10px;">
+			<div style="background-color: rgba(0,0,0,0.1); width: 826px; height: 790px; transform: scale(0.75) translate(-144px, -138px); padding-left:28px; padding-top:28px;">
+				<iframe src="index-1.html" seamless width="800" height="900" frameBorder="0" ></iframe>
+			</div>
+
+			<div class="me-bg" style="width: 540px; height: 100px; top: 22px; left: 30px;">
+				<div class="me-mist"></div>
+				<div class="me-bg-2">
+					<div class="me-left">
+						<div class="me-avatar"></div>
+					</div>
+					<div class="me-right">
+						Here is the version before we apply the code patch, as seen above;
+					</div>
+				</div>
+			</div>
+
+
+			<div class="me-bg" style="width: 540px; height: 100px; top: 302px; left: 30px;">
+				<div class="me-mist"></div>
+				<div class="me-bg-2">
+					<div class="me-left">
+						<div class="me-avatar"></div>
+					</div>
+					<div class="me-right">
+						Here is the version after we apply the code patch. As you can see, 
+						the problem is fixed.
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+
+		<!------------------------------------------------------------------------------------->
+
+		
+
+
+		<div style="height: 54px;background-color: rgb(0, 173, 255);width:100%; margin-top: 50px;"></div>
+
+		<div style="width: 646px; margin-left: calc( 50% - 323px);">
+			<div style="left: calc(50% - 250px); margin-top: 40px; width: 60px; height: 60px; position: absolute; background-image: url(bug.svg); background-size: 100%;"></div>
+			<div style="left: calc(50% + 180px); margin-top: 40px; width: 60px; height: 60px; position: absolute; background-image: url(bug.svg); background-size: 100%;"></div>
+			<h1 style="font-family:Bebas Neue; margin:0; margin-top:40px; text-align: center; font-weight: 900; letter-spacing: 1.528px; font-size: 128px;">
+			Bug 003
+			</h1>
+
+			<h2 style="font-family:Bebas Neue; margin:0; margin-top:-30px; margin-bottom:30px; color:rgba(0,0,0,0.2); text-align: center; font-weight: 900; letter-spacing: 8px; font-size: 58px;">
+			Preview
+			</h2>
+		</div>
+
+	
+		<div class="text">
+			<p>
+				 While the first two fixes were more lightweight in nature, an important future optimization could be correcting a display bug that seems to occur on the visualization interface of a given stock’s performance history. Although further analysis is necessary, it appears that a bug occurs specifically when the line transitions from red to green, or green to red, as highlighted below with the two circles. As you can see, within these circles, strange looking horizontal lines exude from the transition point and make the visualization unrepresentative of the data it displays in certain places. 
+			</p>
+		</div>
+		
+
+
+		<div class="image-container">
+			<div class="image-graph"></div>
+			<div class="red-circle" style="margin-top:-188px; left: 145px; position: relative;"></div>	
+			<div class="red-circle" style="margin-top:-48px; left: 420px; position: relative;"></div>	
+		</div>
+			
+		
+		<div class="text">
+			<p>
+				 Considering the visualization of a given stock performance history is a very prominent part of the user experience, this should be corrected as soon as possible. 
+			</p>
+		</div>
+
+		<!------------------------------------------------------------------------------------->
+
+			<div style="height: 54px;background-color: rgb(0, 173, 255);width:100%;"></div>
+
+			<div style="width: 646px; margin-left: calc( 50% - 323px);">
+			<h1 style="font-family:Bebas Neue; margin:0; margin-top:40px; text-align: center; font-weight: 900; letter-spacing: 1.528px; font-size: 128px;">
+			Thank You
+			</h1>
+
+			<h2 style="font-family:Bebas Neue; margin:0; margin-top:-30px; margin-bottom:30px; color:rgba(0,0,0,0.2); text-align: center; font-weight: 900; letter-spacing: 8px; font-size: 58px;">
+			Have a Nice Day!
+			</h2>
+		</div>
+
+</body>
+</html>
