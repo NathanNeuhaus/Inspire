@@ -1,0 +1,115 @@
+.news-small[_ngcontent-veh-c15] {
+  padding: 0 0 2.25em 0;
+  width: calc(33% - (2.25em / 2));
+  display: inline-grid
+}
+
+.news-small--securities[_ngcontent-veh-c15] {
+  margin-right: .625rem
+}
+
+.news-small__content[_ngcontent-veh-c15] {
+  background-color: #fff;
+  padding: 0 calc(2.25em / 2);
+  margin-top: calc(2.25em * -1);
+  border-radius: 5px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  height: 275px
+}
+
+.news-small__content--no-image-no-badge[_ngcontent-veh-c15] .news-small__title[_ngcontent-veh-c15] {
+  padding-top: 1em
+}
+
+.news-small__image[_ngcontent-veh-c15] {
+  height: 175px
+}
+
+.news-small__image[_ngcontent-veh-c15] img[_ngcontent-veh-c15] {
+  object-fit: cover;
+  max-height: 175px;
+  width: 100%;
+  max-width: calc((0.65 * 1200px) - (2 * 2.25em) + 25px);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px
+}
+
+.news-small__badge[_ngcontent-veh-c15] {
+  text-transform: uppercase;
+  padding: 8px;
+  background-color: #39ade8;
+  color: #fff;
+  width: fit-content;
+  display: table;
+  position: relative;
+  bottom: 36px;
+  letter-spacing: 2px;
+  text-align: left;
+  max-width: calc(100% - (2.25em * 2))
+}
+
+.news-small__badge--no-image[_ngcontent-veh-c15] {
+  bottom: 0px;
+  left: 18px;
+  top: 2.25em
+}
+
+.news-small__title[_ngcontent-veh-c15] {
+  padding: 2.25em 0 0 0;
+  max-height: 35%;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+.news-small__title--no-image[_ngcontent-veh-c15] {
+  padding: calc(2.25em * 2) 0 0 0;
+  max-height: 50%
+}
+
+.news-small__title[_ngcontent-veh-c15] a[_ngcontent-veh-c15] {
+  color: #666
+}
+
+.news-small__title[_ngcontent-veh-c15]:hover {
+  text-decoration: underline
+}
+
+
+/*fix*/
+.news-small__blurb_broken[_ngcontent-veh-c15] {
+  padding: 0.5em 0;
+  max-height: 49%;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+.news-small__blurb[_ngcontent-veh-c15] {
+  padding: 0.5em 0;
+  max-height: 54%;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+.news-small__blurb--no-image[_ngcontent-veh-c15] {
+  max-height: 50%
+}
+
+@media screen and (max-width: 1023px) {
+  .news-small[_ngcontent-veh-c15] {
+    padding: 0 0 1.25em 0;
+    width: 100%
+  }
+  .news-small__image[_ngcontent-veh-c15] img[_ngcontent-veh-c15] {
+    max-width: 100%
+  }
+  .news-small__content[_ngcontent-veh-c15] {
+    height: 215px
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .news-small__content[_ngcontent-veh-c15] {
+    height: 275px
+  }
+}
